@@ -9,6 +9,7 @@ using System.Xml;
 using Mechanik.Pojazdy;
 using Mechanik.Rejestr;
 using System.IO;
+using Mechanik.Properties;
 
 namespace Mechanik
 {
@@ -18,7 +19,7 @@ namespace Mechanik
         //domyślnie ściezka zapisana w rejestrze
 
 
-        Reg r = new Reg();
+        //Reg r = new Reg();
         public UserControlView()
         {
             InitializeComponent();
@@ -33,9 +34,9 @@ namespace Mechanik
         private void UserControlView_Load(object sender, EventArgs e)
         {
 
-            if (r.Path!=null || !File.Exists(r.Path))
+            if (Settings.Default.PATH != null || !File.Exists(Settings.Default.PATH))
             {
-                List<Auto> auta = Auto.ReadFromXML(r.Path);
+                List<Auto> auta = Auto.ReadFromXML(Settings.Default.PATH);
 
                 //Wczytuje z pliku XML i wpisuje w ListView
 

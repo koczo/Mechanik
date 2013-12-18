@@ -45,6 +45,7 @@
             this.dataSetXML = new System.Data.DataSet();
             this.openFileDialogXml = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogXML = new System.Windows.Forms.SaveFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.panelView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetXML)).BeginInit();
@@ -141,6 +142,7 @@
             // panelView
             // 
             this.panelView.BackColor = System.Drawing.Color.Transparent;
+            this.panelView.Controls.Add(this.button1);
             this.panelView.Controls.Add(this.userControlAdd);
             this.panelView.Controls.Add(this.userControlSearch);
             this.panelView.Controls.Add(this.userControlView);
@@ -175,6 +177,13 @@
             // saveFileDialogXML
             // 
             resources.ApplyResources(this.saveFileDialogXML, "saveFileDialogXML");
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -218,6 +227,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialogXml;
         private System.Windows.Forms.ToolStripMenuItem nowyPlikXMLToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialogXML;
+        private System.Windows.Forms.Button button1;
     }
 }
 

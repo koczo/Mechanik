@@ -3,12 +3,13 @@ using System.Drawing;
 using System.Windows.Forms;
 using Mechanik.Rejestr;
 using System.Xml.Linq;
+using Mechanik.Properties;
 
 namespace Mechanik
 {
     public partial class Form1 : Form
     {
-        Reg r = new Reg();
+        //Reg r = new Reg();
         
 
         public Form1()
@@ -143,7 +144,8 @@ namespace Mechanik
            if (openFileDialogXml.ShowDialog() == DialogResult.OK)
            {
                
-               r.Path = openFileDialogXml.FileName;
+               Settings.Default.PATH = openFileDialogXml.FileName;
+               Settings.Default.Save();
                buttonMenuView_Click(null, null);
             }
        }
@@ -154,11 +156,12 @@ namespace Mechanik
            {
                if (saveFileDialogXML.FileName != null)
                {
-                   r.Path = saveFileDialogXML.FileName;
+                   Settings.Default.PATH = saveFileDialogXML.FileName;
+                   Settings.Default.Save();
                    XDocument xml = new XDocument(
                     new XElement("dane"));
 
-                   xml.Save(r.Path);
+                   xml.Save(Settings.Default.PATH);
                    buttonMenuView_Click(null, null);
                }
            }
@@ -167,6 +170,11 @@ namespace Mechanik
        private void userControlView_Load(object sender, EventArgs e)
        {
 
+       }
+
+       private void button1_Click(object sender, EventArgs e)
+       {
+           MessageBox.Show(Settings.Default.PATH);
        }
 
        

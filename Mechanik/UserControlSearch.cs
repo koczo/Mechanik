@@ -9,13 +9,14 @@ using Mechanik.Pojazdy;
 using System.Linq;
 using Mechanik.Rejestr;
 using System.IO;
+using Mechanik.Properties;
 
 namespace Mechanik
 {
     public partial class UserControlSearch : UserControl
     {
 
-        Reg r = new Reg();
+        //Reg r = new Reg();
         public UserControlSearch()
         {
             InitializeComponent();
@@ -43,9 +44,9 @@ namespace Mechanik
 
         public void FillList(string marka, string kolor)
         {
-            if (r.Path != null || !File.Exists(r.Path))
+            if (Settings.Default.PATH != null || !File.Exists(Settings.Default.PATH))
             {
-                List<Auto> auta = Auto.ReadFromXML(r.Path);
+                List<Auto> auta = Auto.ReadFromXML(Settings.Default.PATH);
                 listViewCar.Items.Clear();
                 var s = new List<Auto>();
 

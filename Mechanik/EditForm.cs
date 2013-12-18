@@ -10,6 +10,7 @@ using System.Xml.Linq;
 using System.Linq;
 using Mechanik.Rejestr;
 using System.IO;
+using Mechanik.Properties;
 
 namespace Mechanik
 {
@@ -19,7 +20,7 @@ namespace Mechanik
         public Marka.Typ marka;
         UserControlView _usV;
         UserControlSearch _usS;
-        Reg r = new Reg();
+        //Reg r = new Reg();
 
 
         public EditForm(UserControlView usV)
@@ -63,9 +64,9 @@ namespace Mechanik
             if (comboBoxMarka.SelectedIndex != 0 && !String.IsNullOrEmpty(textBoxModel.Text) && !String.IsNullOrEmpty(textBoxKolor.Text) && !String.IsNullOrEmpty(textBoxNrKolor.Text))
             {
 
-                if (r.Path != null || !File.Exists(r.Path))
+                if (Settings.Default.PATH != null || !File.Exists(Settings.Default.PATH))
                 {
-                    List<Auto> auta = Auto.ReadFromXML(r.Path);
+                    List<Auto> auta = Auto.ReadFromXML(Settings.Default.PATH);
                     var a = (from auto in auta
                              where auto.NrRej == textRej
                              select auto).FirstOrDefault();
@@ -96,9 +97,9 @@ namespace Mechanik
         private void buttonDelate_Click(object sender, EventArgs e)
         {
 
-            if (r.Path != null || !File.Exists(r.Path))
+            if (Settings.Default.PATH != null || !File.Exists(Settings.Default.PATH))
             {
-                List<Auto> auta = Auto.ReadFromXML(r.Path);
+                List<Auto> auta = Auto.ReadFromXML(Settings.Default.PATH);
                 var a = (from auto in auta
                          where auto.NrRej == textRej
                          select auto).FirstOrDefault();

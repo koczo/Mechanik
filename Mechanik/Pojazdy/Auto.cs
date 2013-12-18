@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using Mechanik.Rejestr;
 using System.IO;
+using Mechanik.Properties;
 
 namespace Mechanik.Pojazdy
 {
@@ -86,7 +87,7 @@ namespace Mechanik.Pojazdy
 
         public static void Write(List<Auto> auta)
         {
-            Reg r = new Reg(); 
+            //Reg r = new Reg(); 
             XDocument xml = new XDocument(
                       new XElement("dane",
                           from auto in auta
@@ -99,7 +100,7 @@ namespace Mechanik.Pojazdy
                            new XElement("opis", auto.Opis)
                            )));
 
-            xml.Save(r.Path);
+            xml.Save(Settings.Default.PATH);
         }
 
         public static void FillList(List<Auto> auto)

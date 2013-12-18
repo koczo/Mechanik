@@ -5,12 +5,13 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Mechanik.Pojazdy;
 using Mechanik.Rejestr;
+using Mechanik.Properties;
 
 namespace Mechanik
 {
     public partial class UserControlAdd : UserControl
     {
-        Reg r = new Reg();
+        //Reg r = new Reg();
         UserControlView _usv = new UserControlView();
         public UserControlAdd()
         {
@@ -28,60 +29,56 @@ namespace Mechanik
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(r.Path) || r.Path == null)
+
+            if (!String.IsNullOrEmpty(textBoxNrRej.Text) && comboBoxMarka.SelectedIndex != 0 && !String.IsNullOrEmpty(textBoxModel.Text) && !String.IsNullOrEmpty(textBoxKolor.Text) && !String.IsNullOrEmpty(textBoxNrKolor.Text))
             {
-                if (saveFileDialogXML.ShowDialog() == DialogResult.OK)
+                if (!File.Exists(Settings.Default.PATH) || Settings.Default.PATH == null)
                 {
-                    if (saveFileDialogXML.FileName != null)
+                    if (saveFileDialogXML.ShowDialog() == DialogResult.OK)
                     {
-                        r.Path = saveFileDialogXML.FileName;
-                        XDocument xml = new XDocument(
-                         new XElement("dane"));
+                        if (saveFileDialogXML.FileName != null)
+                        {
+                            Settings.Default.PATH = saveFileDialogXML.FileName;
+                            Settings.Default.Save();
+                            XDocument xml = new XDocument(
+                             new XElement("dane"));
 
-                        xml.Save(r.Path);
+                            xml.Save(Settings.Default.PATH);
+                        }
+
                     }
-
                 }
-            }
+                List<Auto> auta = Auto.ReadFromXML(Settings.Default.PATH);
 
-            else
-            {
-                if (!String.IsNullOrEmpty(textBoxNrRej.Text) && comboBoxMarka.SelectedIndex != 0 && !String.IsNullOrEmpty(textBoxModel.Text) && !String.IsNullOrEmpty(textBoxKolor.Text) && !String.IsNullOrEmpty(textBoxNrKolor.Text))
+                if (Auto.Exists(auta, textBoxNrRej.Text))
                 {
-                    List<Auto> auta = Auto.ReadFromXML(r.Path);
-
-                    if (Auto.Exists(auta, textBoxNrRej.Text))
-                    {
-                        MessageBox.Show("Pojazd juz istnieje");
-                    }
-                    else
-                    {
-                        auta.Add(new Auto(
-                            textBoxNrRej.Text.ToUpper(),
-                            comboBoxMarka.Text.ConvertToEnum<Mechanik.Pojazdy.Marka.Typ>(),
-                            textBoxModel.Text.FirstToUpper(),
-                            textBoxKolor.Text.FirstToUpper(),
-                            textBoxNrKolor.Text.ToUpper(),
-                            richTextBoxOpis.Text.FirstToUpper()
-                            ));
-
-                        Auto.Write(auta);
-                        textBoxNrRej.Text = String.Empty;
-                        comboBoxMarka.SelectedIndex = 0;
-                        textBoxModel.Text = String.Empty;
-                        textBoxKolor.Text = String.Empty;
-                        textBoxNrKolor.Text = String.Empty;
-                        richTextBoxOpis.Text = String.Empty;
-                        this.Visible = false;
-                        _usv.ShowView();
-                    }
-
+                    MessageBox.Show("Pojazd juz istnieje");
                 }
                 else
-                    MessageBox.Show("Wypłnij poprawnie formularz dodania pojazdu","Błąd w formularzu",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                {
+                    auta.Add(new Auto(
+                        textBoxNrRej.Text.ToUpper(),
+                        comboBoxMarka.Text.ConvertToEnum<Mechanik.Pojazdy.Marka.Typ>(),
+                        textBoxModel.Text.FirstToUpper(),
+                        textBoxKolor.Text.FirstToUpper(),
+                        textBoxNrKolor.Text.ToUpper(),
+                        richTextBoxOpis.Text.FirstToUpper()
+                        ));
 
+                    Auto.Write(auta);
+                    textBoxNrRej.Text = String.Empty;
+                    comboBoxMarka.SelectedIndex = 0;
+                    textBoxModel.Text = String.Empty;
+                    textBoxKolor.Text = String.Empty;
+                    textBoxNrKolor.Text = String.Empty;
+                    richTextBoxOpis.Text = String.Empty;
+                    this.Visible = false;
+                    _usv.ShowView();
+                }
 
             }
+            else
+                MessageBox.Show("Wypłnij poprawnie formularz dodania pojazdu", "Błąd w formularzu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
 
