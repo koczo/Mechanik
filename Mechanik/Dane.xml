@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dane>
+  <pojazd>
+    <numer_rej>RK 3245</numer_rej>
+    <marka>Fiat</marka>
+    <model>Punto</model>
+    <kolor>zielony</kolor>
+    <numer_kol>LE4</numer_kol>
+    <opis>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec elit odio. Nam in nibh at lorem cursus bibendum ut non purus. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Nunc at consectetur nunc. Vivamus mauris leo, egestas quis rhoncus vel, commodo at metus. Vestibulum tincidunt interdum velit nec pharetra. Cras a neque justo, eu fermentum massa. Nam quis varius felis. Sed sed lectus erat, sit amet interdum risus. Maecenas tortor orci, suscipit a aliquam venenatis, varius quis turpis. Vivamus at urna ac mauris porttitor tincidunt nec a massa. Vivamus placerat lectus sapien.</opis>
+  </pojazd>
+  
+  <pojazd>
+    <numer_rej>RK 3244</numer_rej>
+    <marka>Ford</marka>
+    <model>Mondeo</model>
+    <kolor>czarny</kolor>
+    <numer_kol>3452</numer_kol>
+    <opis>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec elit odio. Nam in nibh at lorem cursus bibendum ut non purus. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Nunc at consectetur nunc. Vivamus mauris leo, egestas quis rhoncus vel, commodo at metus. Vestibulum tincidunt interdum velit nec pharetra. Cras a neque justo, eu fermentum massa. Nam quis varius felis. Sed sed lectus erat, sit amet interdum risus. Maecenas tortor orci, suscipit a aliquam venenatis, varius quis turpis. Vivamus at urna ac mauris porttitor tincidunt nec a massa. Vivamus placerat lectus sapien.</opis>
+  </pojazd>
+  <pojazd>
+    <numer_rej>RK 3244</numer_rej>
+    <marka>Ford</marka>
+    <model>kalccsadk</model>
+    <kolor>czarny</kolor>
+    <numer_kol>3452</numer_kol>
+    <opis>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec elit odio. Nam in nibh at lorem cursus bibendum ut non purus. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Nunc at consectetur nunc. Vivamus mauris leo, egestas quis rhoncus vel, commodo at metus. Vestibulum tincidunt interdum velit nec pharetra. Cras a neque justo, eu fermentum massa. Nam quis varius felis. Sed sed lectus erat, sit amet interdum risus. Maecenas tortor orci, suscipit a aliquam venenatis, varius quis turpis. Vivamus at urna ac mauris porttitor tincidunt nec a massa. Vivamus placerat lectus sapien.</opis>
+  </pojazd>
+  <pojazd>
+    <numer_rej>RK 3244</numer_rej>
+    <marka>Ford</marka>
+    <model>Mondeo</model>
+    <kolor>czarny</kolor>
+    <numer_kol>3452</numer_kol>
+    <opis>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec elit odio. Nam in nibh at lorem cursus bibendum ut non purus. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Nunc at consectetur nunc. Vivamus mauris leo, egestas quis rhoncus vel, commodo at metus. Vestibulum tincidunt interdum velit nec pharetra. Cras a neque justo, eu fermentum massa. Nam quis varius felis. Sed sed lectus erat, sit amet interdum risus. Maecenas tortor orci, suscipit a aliquam venenatis, varius quis turpis. Vivamus at urna ac mauris porttitor tincidunt nec a massa. Vivamus placerat lectus sapien.</opis>
+  </pojazd>
+
+
+</dane>
