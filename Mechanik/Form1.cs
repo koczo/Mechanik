@@ -7,137 +7,137 @@ using Mechanik.Properties;
 
 namespace Mechanik
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-        //Reg r = new Reg();
+        UserControlAdd add;
+        UserControlSearch search;
+        UserControlView view;
         
 
         public Form1()
         {
-            InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //comboBox1.DataSource=Enum.GetValues(typeof(Pojazdy.Marka.Typ));
-            clearView();
-            
-        }
-       
-
-        
-
-        #region Animacja przycisków menu
-
-        private void buttonMenuView_MouseHover(object sender, EventArgs e)
-        {
-            buttonMenuView.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-        }
-
-        private void buttonMenuView_MouseLeave(object sender, EventArgs e)
-        {
-            buttonMenuView.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-        }
-
-        private void buttonMenuAddRepair_MouseHover(object sender, EventArgs e)
-        {
-            buttonMenuAddRepair.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-        }
-        private void buttonMenuAddRepair_MouseLeave(object sender, EventArgs e)
-        {
-            buttonMenuAddRepair.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-
-        }
-
-        private void buttonMenuSearch_MouseHover(object sender, EventArgs e)
-        {
-            buttonMenuSearch.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-        }
-
-        private void buttonMenuSearch_MouseLeave(object sender, EventArgs e)
-        {
-            buttonMenuSearch.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-        }
-
-        
-        #endregion
-
-        #region Buttons Click
-
-        /// <summary>
-        /// Zdarzenie klikniecia na przycisk
-        /// Wyświetl auta
-        /// Zmiania wszystkim User Controlom Visibility na "false"
-        /// Ustawia userControlView.Visibility na true
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonMenuView_Click(object sender, EventArgs e)
-        {
-            clearView();
-            userControlView.Visible = true;
-        }
-
-        /// <summary>
-        /// Zdarzenie klikniecia na przycisk
-        /// Dodaj naprawe
-        /// Zmiania wszystkim User Controlom Visibility na "false"
-        /// Ustawia userControlAdd.Visibility na true
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonMenuAddRepair_Click(object sender, EventArgs e)
-        {
-            clearView();
-            userControlAdd.Visible = true;
-        }
-
-
-        /// <summary>
-        /// Zdarzenie klikniecia na przycisk
-        /// Szukaj
-        /// Zmiania wszystkim User Controlom Visibility na "false"
-        /// Ustawia userControlSearch.Visibility na true
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonMenuSearch_Click(object sender, EventArgs e)
-        {
-            clearView();
-            userControlSearch.Visible = true;
-        }
-
-        #endregion
-       
-        
-        private void oProgramieToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutBox about = new AboutBox();
-            about.ShowDialog();
-        }
-
-        /// <summary>
-        /// Chowa wszyskie User Cntrol'e
-        /// </summary>
-       public void clearView()
-        {
-            userControlView.Visible = false;
-            userControlAdd.Visible = false;
-            userControlSearch.Visible = false;
-        }
-
-       private void panelView_Paint(object sender, PaintEventArgs e)
-       {
            
+            InitializeComponent();
+            view = new UserControlView();
+            add = new UserControlAdd();
+            search = new UserControlSearch();
+            metroPanel.Controls.Add(view);
+            DisplayUserControl(view);
+          
+        }
 
 
-       }
+        internal void DisplayUserControl(UserControl userControl)
+        {
+            foreach (Control control in metroPanel.Controls)
+            {
+                if (control is UserControl)
+                {
+                    if (control == userControl)
+                    {
+                        control.Visible = true;
+                        control.Enabled = true;
+                        control.BringToFront();
+                        control.Dock = DockStyle.Fill;
+                    }
+                    else
+                    {
+                        control.Visible = false;
+                        control.Enabled = false;
+                        control.Dock = DockStyle.None;
+                        Controls.Remove(control);
+                    }
+                }
+            }
+        }
+       
 
-       private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
-       {
-           this.Close();
-       }
+        
+
+        //#region Animacja przycisków menu
+
+        //private void buttonMenuView_MouseHover(object sender, EventArgs e)
+        //{
+        //    buttonMenuView.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+        //}
+
+        //private void buttonMenuView_MouseLeave(object sender, EventArgs e)
+        //{
+        //    buttonMenuView.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+        //}
+
+        //private void buttonMenuAddRepair_MouseHover(object sender, EventArgs e)
+        //{
+        //    buttonMenuAddRepair.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+        //}
+        //private void buttonMenuAddRepair_MouseLeave(object sender, EventArgs e)
+        //{
+        //    buttonMenuAddRepair.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+
+        //}
+
+        //private void buttonMenuSearch_MouseHover(object sender, EventArgs e)
+        //{
+        //    buttonMenuSearch.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+        //}
+
+        //private void buttonMenuSearch_MouseLeave(object sender, EventArgs e)
+        //{
+        //    buttonMenuSearch.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+        //}
+
+        
+        //#endregion
+
+        //#region Buttons Click
+
+        ///// <summary>
+        ///// Zdarzenie klikniecia na przycisk
+        ///// Wyświetl auta
+        ///// Zmiania wszystkim User Controlom Visibility na "false"
+        ///// Ustawia userControlView.Visibility na true
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void buttonMenuView_Click(object sender, EventArgs e)
+        //{
+        //    clearView();
+        //    userControlView.Visible = true;
+        //}
+
+        ///// <summary>
+        ///// Zdarzenie klikniecia na przycisk
+        ///// Dodaj naprawe
+        ///// Zmiania wszystkim User Controlom Visibility na "false"
+        ///// Ustawia userControlAdd.Visibility na true
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void buttonMenuAddRepair_Click(object sender, EventArgs e)
+        //{
+        //    clearView();
+        //    userControlAdd.Visible = true;
+        //}
+
+
+        ///// <summary>
+        ///// Zdarzenie klikniecia na przycisk
+        ///// Szukaj
+        ///// Zmiania wszystkim User Controlom Visibility na "false"
+        ///// Ustawia userControlSearch.Visibility na true
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void buttonMenuSearch_Click(object sender, EventArgs e)
+        //{
+        //    clearView();
+        //    userControlSearch.Visible = true;
+        //}
+
+        //#endregion
+       
+        
 
        private void wybierzPlikXMLToolStripMenuItem_Click(object sender, EventArgs e)
        {
@@ -146,7 +146,7 @@ namespace Mechanik
                
                Settings.Default.PATH = openFileDialogXml.FileName;
                Settings.Default.Save();
-               buttonMenuView_Click(null, null);
+             
             }
        }
 
@@ -162,19 +162,30 @@ namespace Mechanik
                     new XElement("dane"));
 
                    xml.Save(Settings.Default.PATH);
-                   buttonMenuView_Click(null, null);
+                   
                }
            }
        }
 
-       private void userControlView_Load(object sender, EventArgs e)
-       {
 
+       private void metroTileAdd_Click(object sender, EventArgs e)
+       {
+           
+           metroPanel.Controls.Add(add);
+           DisplayUserControl(add);
        }
 
-       private void button1_Click(object sender, EventArgs e)
+       private void metroTileSearch_Click(object sender, EventArgs e)
        {
-           MessageBox.Show(Settings.Default.PATH);
+           
+           metroPanel.Controls.Add(search);
+           DisplayUserControl(search);
+       }
+
+       private void metroTileView_Click(object sender, EventArgs e)
+       {
+           metroPanel.Controls.Add(view);
+           DisplayUserControl(view);
        }
 
        

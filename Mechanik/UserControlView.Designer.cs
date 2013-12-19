@@ -32,10 +32,10 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listViewCar
@@ -50,11 +50,11 @@
             this.columnHeader6});
             this.listViewCar.FullRowSelect = true;
             this.listViewCar.GridLines = true;
-            this.listViewCar.Location = new System.Drawing.Point(93, 67);
+            this.listViewCar.Location = new System.Drawing.Point(15, 12);
             this.listViewCar.MaximumSize = new System.Drawing.Size(620, 430);
             this.listViewCar.MultiSelect = false;
             this.listViewCar.Name = "listViewCar";
-            this.listViewCar.Size = new System.Drawing.Size(620, 430);
+            this.listViewCar.Size = new System.Drawing.Size(607, 388);
             this.listViewCar.TabIndex = 0;
             this.listViewCar.UseCompatibleStateImageBehavior = false;
             this.listViewCar.View = System.Windows.Forms.View.Details;
@@ -74,6 +74,11 @@
             // 
             this.columnHeader3.Text = "Model";
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.DisplayIndex = 6;
+            this.columnHeader7.Text = "Data";
+            // 
             // columnHeader4
             // 
             this.columnHeader4.DisplayIndex = 3;
@@ -91,18 +96,13 @@
             this.columnHeader6.Text = "Opis";
             this.columnHeader6.Width = 190;
             // 
-            // columnHeader7
-            // 
-            this.columnHeader7.DisplayIndex = 6;
-            this.columnHeader7.Text = "Data";
-            // 
             // UserControlView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.listViewCar);
             this.Name = "UserControlView";
-            this.Size = new System.Drawing.Size(787, 553);
+            this.Size = new System.Drawing.Size(625, 420);
             this.Load += new System.EventHandler(this.UserControlView_Load);
             this.VisibleChanged += new System.EventHandler(this.UserControlView_VisibleChanged);
             this.ResumeLayout(false);

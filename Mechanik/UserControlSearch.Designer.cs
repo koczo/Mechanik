@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.textBoxNrKolor = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.listViewCar = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,20 +43,11 @@
             // 
             // textBoxNrKolor
             // 
-            this.textBoxNrKolor.Location = new System.Drawing.Point(226, 86);
+            this.textBoxNrKolor.Location = new System.Drawing.Point(165, 40);
             this.textBoxNrKolor.Name = "textBoxNrKolor";
             this.textBoxNrKolor.Size = new System.Drawing.Size(100, 20);
             this.textBoxNrKolor.TabIndex = 0;
             this.textBoxNrKolor.TextChanged += new System.EventHandler(this.textBoxNrRej_TextChanged);
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(91, 143);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(592, 279);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // listViewCar
             // 
@@ -70,11 +60,11 @@
             this.columnHeader6});
             this.listViewCar.FullRowSelect = true;
             this.listViewCar.GridLines = true;
-            this.listViewCar.Location = new System.Drawing.Point(76, 130);
+            this.listViewCar.Location = new System.Drawing.Point(3, 88);
             this.listViewCar.MaximumSize = new System.Drawing.Size(620, 430);
             this.listViewCar.MultiSelect = false;
             this.listViewCar.Name = "listViewCar";
-            this.listViewCar.Size = new System.Drawing.Size(620, 332);
+            this.listViewCar.Size = new System.Drawing.Size(619, 288);
             this.listViewCar.TabIndex = 2;
             this.listViewCar.UseCompatibleStateImageBehavior = false;
             this.listViewCar.View = System.Windows.Forms.View.Details;
@@ -110,7 +100,7 @@
             // comboBoxMarka
             // 
             this.comboBoxMarka.FormattingEnabled = true;
-            this.comboBoxMarka.Location = new System.Drawing.Point(76, 85);
+            this.comboBoxMarka.Location = new System.Drawing.Point(15, 39);
             this.comboBoxMarka.Name = "comboBoxMarka";
             this.comboBoxMarka.Size = new System.Drawing.Size(121, 21);
             this.comboBoxMarka.TabIndex = 3;
@@ -119,7 +109,7 @@
             // labelModel
             // 
             this.labelModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelModel.Location = new System.Drawing.Point(87, 57);
+            this.labelModel.Location = new System.Drawing.Point(26, 11);
             this.labelModel.Name = "labelModel";
             this.labelModel.Size = new System.Drawing.Size(99, 25);
             this.labelModel.TabIndex = 4;
@@ -129,7 +119,7 @@
             // 
             this.labelNrKolor.AutoSize = true;
             this.labelNrKolor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNrKolor.Location = new System.Drawing.Point(222, 57);
+            this.labelNrKolor.Location = new System.Drawing.Point(161, 11);
             this.labelNrKolor.Name = "labelNrKolor";
             this.labelNrKolor.Size = new System.Drawing.Size(105, 20);
             this.labelNrKolor.TabIndex = 5;
@@ -139,15 +129,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Mechanik.Properties.Resources.userControlAdd_03;
             this.Controls.Add(this.labelNrKolor);
             this.Controls.Add(this.labelModel);
             this.Controls.Add(this.comboBoxMarka);
             this.Controls.Add(this.listViewCar);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBoxNrKolor);
             this.Name = "UserControlSearch";
-            this.Size = new System.Drawing.Size(787, 553);
+            this.Size = new System.Drawing.Size(625, 420);
             this.Load += new System.EventHandler(this.UserControlSearch_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,7 +145,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBoxNrKolor;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listViewCar;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
