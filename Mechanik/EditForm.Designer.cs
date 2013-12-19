@@ -50,7 +50,7 @@
             // 
             this.labelTytyl.AutoSize = true;
             this.labelTytyl.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelTytyl.Location = new System.Drawing.Point(75, 9);
+            this.labelTytyl.Location = new System.Drawing.Point(52, 113);
             this.labelTytyl.Name = "labelTytyl";
             this.labelTytyl.Size = new System.Drawing.Size(71, 30);
             this.labelTytyl.TabIndex = 0;
@@ -60,7 +60,7 @@
             // labelMarka
             // 
             this.labelMarka.AutoSize = true;
-            this.labelMarka.Location = new System.Drawing.Point(80, 63);
+            this.labelMarka.Location = new System.Drawing.Point(54, 154);
             this.labelMarka.Name = "labelMarka";
             this.labelMarka.Size = new System.Drawing.Size(37, 13);
             this.labelMarka.TabIndex = 1;
@@ -69,7 +69,7 @@
             // labelModel
             // 
             this.labelModel.AutoSize = true;
-            this.labelModel.Location = new System.Drawing.Point(80, 90);
+            this.labelModel.Location = new System.Drawing.Point(54, 181);
             this.labelModel.Name = "labelModel";
             this.labelModel.Size = new System.Drawing.Size(36, 13);
             this.labelModel.TabIndex = 2;
@@ -78,7 +78,7 @@
             // labelKolor
             // 
             this.labelKolor.AutoSize = true;
-            this.labelKolor.Location = new System.Drawing.Point(80, 149);
+            this.labelKolor.Location = new System.Drawing.Point(54, 240);
             this.labelKolor.Name = "labelKolor";
             this.labelKolor.Size = new System.Drawing.Size(31, 13);
             this.labelKolor.TabIndex = 3;
@@ -88,21 +88,21 @@
             // 
             this.comboBoxMarka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMarka.FormattingEnabled = true;
-            this.comboBoxMarka.Location = new System.Drawing.Point(246, 60);
+            this.comboBoxMarka.Location = new System.Drawing.Point(220, 151);
             this.comboBoxMarka.Name = "comboBoxMarka";
             this.comboBoxMarka.Size = new System.Drawing.Size(121, 21);
             this.comboBoxMarka.TabIndex = 4;
             // 
             // textBoxModel
             // 
-            this.textBoxModel.Location = new System.Drawing.Point(246, 87);
+            this.textBoxModel.Location = new System.Drawing.Point(220, 178);
             this.textBoxModel.Name = "textBoxModel";
             this.textBoxModel.Size = new System.Drawing.Size(100, 20);
             this.textBoxModel.TabIndex = 5;
             // 
             // textBoxKolor
             // 
-            this.textBoxKolor.Location = new System.Drawing.Point(246, 149);
+            this.textBoxKolor.Location = new System.Drawing.Point(220, 240);
             this.textBoxKolor.Name = "textBoxKolor";
             this.textBoxKolor.Size = new System.Drawing.Size(100, 20);
             this.textBoxKolor.TabIndex = 6;
@@ -110,7 +110,7 @@
             // labelNrKolor
             // 
             this.labelNrKolor.AutoSize = true;
-            this.labelNrKolor.Location = new System.Drawing.Point(80, 178);
+            this.labelNrKolor.Location = new System.Drawing.Point(54, 269);
             this.labelNrKolor.Name = "labelNrKolor";
             this.labelNrKolor.Size = new System.Drawing.Size(71, 13);
             this.labelNrKolor.TabIndex = 7;
@@ -119,7 +119,7 @@
             // labelOpis
             // 
             this.labelOpis.AutoSize = true;
-            this.labelOpis.Location = new System.Drawing.Point(80, 214);
+            this.labelOpis.Location = new System.Drawing.Point(54, 305);
             this.labelOpis.Name = "labelOpis";
             this.labelOpis.Size = new System.Drawing.Size(28, 13);
             this.labelOpis.TabIndex = 8;
@@ -127,14 +127,14 @@
             // 
             // textBoxNrKolor
             // 
-            this.textBoxNrKolor.Location = new System.Drawing.Point(246, 175);
+            this.textBoxNrKolor.Location = new System.Drawing.Point(220, 266);
             this.textBoxNrKolor.Name = "textBoxNrKolor";
             this.textBoxNrKolor.Size = new System.Drawing.Size(100, 20);
             this.textBoxNrKolor.TabIndex = 9;
             // 
             // richTextBoxOpis
             // 
-            this.richTextBoxOpis.Location = new System.Drawing.Point(126, 214);
+            this.richTextBoxOpis.Location = new System.Drawing.Point(100, 305);
             this.richTextBoxOpis.Name = "richTextBoxOpis";
             this.richTextBoxOpis.Size = new System.Drawing.Size(330, 96);
             this.richTextBoxOpis.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(364, 345);
+            this.buttonSave.Location = new System.Drawing.Point(338, 436);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 11;
@@ -152,7 +152,7 @@
             // 
             // buttonDelate
             // 
-            this.buttonDelate.Location = new System.Drawing.Point(267, 345);
+            this.buttonDelate.Location = new System.Drawing.Point(241, 436);
             this.buttonDelate.Name = "buttonDelate";
             this.buttonDelate.Size = new System.Drawing.Size(75, 23);
             this.buttonDelate.TabIndex = 12;
@@ -162,7 +162,7 @@
             // 
             // dateTimePickerData
             // 
-            this.dateTimePickerData.Location = new System.Drawing.Point(246, 120);
+            this.dateTimePickerData.Location = new System.Drawing.Point(220, 211);
             this.dateTimePickerData.Name = "dateTimePickerData";
             this.dateTimePickerData.Size = new System.Drawing.Size(176, 20);
             this.dateTimePickerData.TabIndex = 13;
@@ -170,7 +170,7 @@
             // labelData
             // 
             this.labelData.AutoSize = true;
-            this.labelData.Location = new System.Drawing.Point(80, 120);
+            this.labelData.Location = new System.Drawing.Point(54, 211);
             this.labelData.Name = "labelData";
             this.labelData.Size = new System.Drawing.Size(30, 13);
             this.labelData.TabIndex = 14;
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 415);
+            this.ClientSize = new System.Drawing.Size(469, 469);
             this.Controls.Add(this.labelData);
             this.Controls.Add(this.dateTimePickerData);
             this.Controls.Add(this.buttonDelate);
@@ -197,10 +197,10 @@
             this.Controls.Add(this.labelMarka);
             this.Controls.Add(this.labelTytyl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(0, 0);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditForm_FormClosing);
             this.Load += new System.EventHandler(this.EditForm_Load);

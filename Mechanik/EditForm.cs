@@ -14,7 +14,7 @@ using Mechanik.Properties;
 
 namespace Mechanik
 {
-    public partial class EditForm : Form
+    public partial class EditForm : MetroFramework.Forms.MetroForm
     {
         public string textOpis, textRej, textModel, textKolor, textNrKolor;
         public Marka.Typ marka;
@@ -40,7 +40,7 @@ namespace Mechanik
 
         private void EditForm_Load(object sender, EventArgs e)
         {
-            this.Text = "Edycja pojazdu o numerze rejestracyjnym " + textRej;
+            this.Text = "Edycja pojazdu o numerze \nrejestracyjnym " + textRej;
             labelTytyl.Text = textRej;
             comboBoxMarka.DataSource = Enum.GetValues(typeof(Pojazdy.Marka.Typ));
 

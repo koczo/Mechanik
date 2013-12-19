@@ -172,7 +172,13 @@ namespace Mechanik
        {
            
            metroPanel.Controls.Add(add);
+           add.SaveButtonClicked += add_SaveButtonClicked;
            DisplayUserControl(add);
+       }
+
+       void add_SaveButtonClicked(object sender, EventArgs e)
+       {
+           //throw new NotImplementedException();
        }
 
        private void metroTileSearch_Click(object sender, EventArgs e)

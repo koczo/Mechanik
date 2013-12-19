@@ -44,6 +44,10 @@
             this.saveFileDialogXML = new System.Windows.Forms.SaveFileDialog();
             this.labelData = new System.Windows.Forms.Label();
             this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroUserControl1 = new MetroFramework.Controls.MetroUserControl();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -54,6 +58,7 @@
             this.buttonSave.TabIndex = 0;
             this.buttonSave.Text = "Zapisz";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // comboBoxMarka
             // 
@@ -181,10 +186,76 @@
             this.dateTimePickerData.Size = new System.Drawing.Size(176, 20);
             this.dateTimePickerData.TabIndex = 15;
             // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.metroComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.metroComboBox1.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.metroComboBox1.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(340, 57);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
+            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroComboBox1.StyleManager = null;
+            this.metroComboBox1.TabIndex = 17;
+            this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // metroUserControl1
+            // 
+            this.metroUserControl1.CustomBackground = false;
+            this.metroUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.metroUserControl1.Name = "metroUserControl1";
+            this.metroUserControl1.Size = new System.Drawing.Size(625, 420);
+            this.metroUserControl1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroUserControl1.StyleManager = null;
+            this.metroUserControl1.TabIndex = 18;
+            this.metroUserControl1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.CustomBackground = false;
+            this.metroTextBox1.CustomForeColor = false;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Small;
+            this.metroTextBox1.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
+            this.metroTextBox1.Location = new System.Drawing.Point(340, 106);
+            this.metroTextBox1.Multiline = false;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.Size = new System.Drawing.Size(121, 23);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.StyleManager = null;
+            this.metroTextBox1.TabIndex = 19;
+            this.metroTextBox1.Text = "metroTextBox1";
+            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.UseStyleColors = false;
+            // 
+            // metroTextBox2
+            // 
+            this.metroTextBox2.CustomBackground = false;
+            this.metroTextBox2.CustomForeColor = false;
+            this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Small;
+            this.metroTextBox2.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
+            this.metroTextBox2.Location = new System.Drawing.Point(401, 144);
+            this.metroTextBox2.Multiline = true;
+            this.metroTextBox2.Name = "metroTextBox2";
+            this.metroTextBox2.SelectedText = "";
+            this.metroTextBox2.Size = new System.Drawing.Size(207, 119);
+            this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox2.StyleManager = null;
+            this.metroTextBox2.TabIndex = 20;
+            this.metroTextBox2.Text = "metroTextBox2";
+            this.metroTextBox2.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox2.UseStyleColors = false;
+            // 
             // UserControlAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.metroTextBox2);
+            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.labelData);
             this.Controls.Add(this.dateTimePickerData);
             this.Controls.Add(this.labelOpis);
@@ -200,6 +271,7 @@
             this.Controls.Add(this.textBoxNrRej);
             this.Controls.Add(this.comboBoxMarka);
             this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.metroUserControl1);
             this.Name = "UserControlAdd";
             this.Size = new System.Drawing.Size(625, 420);
             this.ResumeLayout(false);
@@ -225,5 +297,9 @@
          private System.Windows.Forms.SaveFileDialog saveFileDialogXML;
          private System.Windows.Forms.Label labelData;
          private System.Windows.Forms.DateTimePicker dateTimePickerData;
+         private MetroFramework.Controls.MetroComboBox metroComboBox1;
+         private MetroFramework.Controls.MetroUserControl metroUserControl1;
+         private MetroFramework.Controls.MetroTextBox metroTextBox1;
+         private MetroFramework.Controls.MetroTextBox metroTextBox2;
      }
  }
