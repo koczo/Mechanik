@@ -10,6 +10,7 @@ using System.Drawing;
 using Mechanik.Rejestr;
 using System.IO;
 using Mechanik.Properties;
+using System.Xml;
 
 namespace Mechanik.Pojazdy
 {
@@ -101,6 +102,31 @@ namespace Mechanik.Pojazdy
                            )));
 
             xml.Save(Settings.Default.PATH);
+           
+        }
+
+        public static void Edit(string nrRej)
+        {
+
+            XDocument xml = XDocument.Load(Settings.Default.PATH);
+
+            var query = from nr in xml.Elements("pojazd")
+                        where nr.Value == nrRej
+                        select nr;
+
+                      //new XElement("dane",
+                      //    from auto in auta
+                      //    select new XElement("pojazd",
+                      //     new XElement("numer_rej", auto.NrRej),
+                      //     new XElement("marka", auto.Marka),
+                      //     new XElement("model", auto.Model),
+                      //     new XElement("kolor", auto.Kolor),
+                      //     new XElement("numer_kol", auto.NrKolor),
+                      //     new XElement("opis", auto.Opis)
+                      //     )));
+
+            xml.Save(Settings.Default.PATH);
+           
         }
 
         public static void FillList(List<Auto> auto)

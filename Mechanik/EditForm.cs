@@ -27,14 +27,14 @@ namespace Mechanik
         {
             InitializeComponent();
             _usV = usV;
-            this.FormClosing += new FormClosingEventHandler(EditForm_FormClosing);
+           // this.FormClosing += new FormClosingEventHandler(EditForm_FormClosing);
 
         }
         public EditForm(UserControlSearch usS)
         {
             InitializeComponent();
             _usS = usS;
-            FormClosing += new FormClosingEventHandler(EditForm_FormClosing);
+            //FormClosing += new FormClosingEventHandler(EditForm_FormClosing);
 
         }
 
@@ -76,7 +76,8 @@ namespace Mechanik
                     a.NrKolor = textBoxNrKolor.Text;
                     a.Opis = richTextBoxOpis.Text;
 
-                    Auto.Write(auta);
+                    Auto.Edit(textRej);
+                    //Auto.Write(auta);
                     this.Close();
                 }
 
@@ -86,13 +87,6 @@ namespace Mechanik
 
         }
 
-        private void EditForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (_usV != null)
-                _usV.Refreshes();
-            if (_usS != null)
-                _usS.Refr();
-        }
 
         private void buttonDelate_Click(object sender, EventArgs e)
         {
