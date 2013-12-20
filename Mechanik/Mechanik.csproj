@@ -100,6 +100,11 @@
     <Compile Include="Pojazdy\StaticTools .cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Rejestr\Reg.cs" />
     <Compile Include="UserControlAdd.cs">
       <SubType>UserControl</SubType>
@@ -136,14 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UserControlAdd.resx">
       <DependentUpon>UserControlAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,37 +167,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\button_03.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Button_06.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Button_08.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tlo4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\26.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_file.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Dane.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
     <Content Include="icona.ico" />
     <None Include="Resources\Logo_mechanik.jpg" />
-    <None Include="Resources\userControlAdd_03.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
