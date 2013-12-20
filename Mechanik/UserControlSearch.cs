@@ -105,7 +105,7 @@ namespace Mechanik
 
                 );
 
-            EditForm edit = new EditForm(this);
+            EditForm edit = new EditForm();
 
             edit.textRej = auto.NrRej;
             edit.marka = auto.Marka;
@@ -116,11 +116,12 @@ namespace Mechanik
             edit.ShowDialog();
         }
 
-        public void Refr()
+        public void LoadView()
         {
-
             FillList(comboBoxMarka.Text, textBoxNrKolor.Text);
         }
+
+       
 
       
     }

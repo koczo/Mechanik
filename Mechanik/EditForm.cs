@@ -18,25 +18,16 @@ namespace Mechanik
     {
         public string textOpis, textRej, textModel, textKolor, textNrKolor;
         public Typ marka;
-        UserControlView _usV;
-        UserControlSearch _usS;
-        //Reg r = new Reg();
+        UserControlView view;
+        UserControlSearch search;
 
-
-        public EditForm(UserControlView usV)
+        public EditForm()
         {
             InitializeComponent();
-            _usV = usV;
-           // this.FormClosing += new FormClosingEventHandler(EditForm_FormClosing);
-
+            view = new UserControlView();
+            search = new UserControlSearch();
         }
-        public EditForm(UserControlSearch usS)
-        {
-            InitializeComponent();
-            _usS = usS;
-            //FormClosing += new FormClosingEventHandler(EditForm_FormClosing);
-
-        }
+    
 
         private void EditForm_Load(object sender, EventArgs e)
         {
@@ -45,8 +36,6 @@ namespace Mechanik
             comboBoxMarka.DataSource = Enum.GetValues(typeof(Typ));
 
             comboBoxMarka.SelectedIndex = comboBoxMarka.Items.IndexOf(marka);
-
-            //MessageBox.Show(comboBoxMarka.Items.IndexOf(marka).ToString());
             textBoxModel.Text = textModel;
             textBoxKolor.Text = textKolor;
             textBoxNrKolor.Text = textNrKolor;
@@ -54,10 +43,6 @@ namespace Mechanik
 
         }
 
-        private void labelTytyl_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -77,7 +62,7 @@ namespace Mechanik
                     a.Opis = richTextBoxOpis.Text;
 
                     Auto.Edit(a);
-                    //Auto.Write(auta);
+                    
                     this.Close();
                 }
 
@@ -103,12 +88,5 @@ namespace Mechanik
             }
 
         }
-
-
-
-
-
-
-
     }
 }

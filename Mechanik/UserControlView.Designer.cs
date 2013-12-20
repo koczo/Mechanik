@@ -35,6 +35,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.metroProgressSpinner = new MetroFramework.Controls.MetroProgressSpinner();
             this.SuspendLayout();
             // 
             // listViewCar
@@ -56,7 +57,6 @@
             this.listViewCar.TabIndex = 0;
             this.listViewCar.UseCompatibleStateImageBehavior = false;
             this.listViewCar.View = System.Windows.Forms.View.Details;
-            this.listViewCar.SelectedIndexChanged += new System.EventHandler(this.listViewCar_SelectedIndexChanged);
             this.listViewCar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewCar_MouseDoubleClick);
             // 
             // columnHeader1
@@ -74,30 +74,41 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.DisplayIndex = 3;
             this.columnHeader4.Text = "Kolor";
             // 
             // columnHeader5
             // 
-            this.columnHeader5.DisplayIndex = 4;
             this.columnHeader5.Text = "Numer Koloru";
             this.columnHeader5.Width = 55;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.DisplayIndex = 5;
             this.columnHeader6.Text = "Opis";
             this.columnHeader6.Width = 80;
+            // 
+            // metroProgressSpinner
+            // 
+            this.metroProgressSpinner.CustomBackground = false;
+            this.metroProgressSpinner.Location = new System.Drawing.Point(204, 83);
+            this.metroProgressSpinner.Maximum = 100;
+            this.metroProgressSpinner.Name = "metroProgressSpinner";
+            this.metroProgressSpinner.Size = new System.Drawing.Size(225, 214);
+            this.metroProgressSpinner.Speed = 5F;
+            this.metroProgressSpinner.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroProgressSpinner.StyleManager = null;
+            this.metroProgressSpinner.TabIndex = 1;
+            this.metroProgressSpinner.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroProgressSpinner.Visible = false;
             // 
             // UserControlView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.metroProgressSpinner);
             this.Controls.Add(this.listViewCar);
             this.Name = "UserControlView";
             this.Size = new System.Drawing.Size(625, 420);
-            this.Load += new System.EventHandler(this.UserControlView_Load);
-            this.VisibleChanged += new System.EventHandler(this.UserControlView_VisibleChanged);
+            //this.Load += new System.EventHandler(this.UserControlView_Load);
             this.ResumeLayout(false);
 
         }
@@ -111,6 +122,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner;
 
     }
 }

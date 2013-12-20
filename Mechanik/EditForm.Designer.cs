@@ -55,7 +55,7 @@
             this.labelTytyl.Size = new System.Drawing.Size(71, 30);
             this.labelTytyl.TabIndex = 0;
             this.labelTytyl.Text = "label1";
-            this.labelTytyl.Click += new System.EventHandler(this.labelTytyl_Click);
+            //this.labelTytyl.Click += new System.EventHandler(this.labelTytyl_Click);
             // 
             // labelMarka
             // 

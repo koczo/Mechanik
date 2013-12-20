@@ -10,74 +10,22 @@ using Mechanik.Pojazdy;
 using Mechanik.Rejestr;
 using System.IO;
 using Mechanik.Properties;
+using System.Threading;
 
 namespace Mechanik
 {
     public partial class UserControlView : UserControl
     {
-        // Zrobić publiczna podawana z Form 1 
-        //domyślnie ściezka zapisana w rejestrze
-
-
-        //Reg r = new Reg();
+  
         public UserControlView()
         {
             InitializeComponent();
         }
 
-        public void ShowView()
-        {
-
-            this.Visible = true;
-        }
-
-        private void UserControlView_Load(object sender, EventArgs e)
-        {
-
-            if (!String.IsNullOrEmpty(Settings.Default.PATH) && File.Exists(Settings.Default.PATH))
-            {
-                List<Auto> auta = Auto.ReadFromXML(Settings.Default.PATH);
-
-                //Wczytuje z pliku XML i wpisuje w ListView
-
-
-
-                int i = 0;
-                foreach (var a in auta)
-                {
-
-
-                    listViewCar.Items.Add(a.NrRej);
-
-                    if (i % 2 == 0)
-                        listViewCar.Items[i].BackColor = SystemColors.Info;
-                    else
-                        listViewCar.Items[i].BackColor = SystemColors.Window;
-                    i++;
-
-                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.Marka.ToString());
-                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.Model);
-                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.Kolor);
-                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.NrKolor);
-                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.Opis);
-
-
-
-
-
-                }
-                
-            }
-        }
         
-
-      
-
         private void listViewCar_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //MessageBox.Show(listViewCar.SelectedItems[0].SubItems[4].Text);
-            //TO-DO 
-            //Okno Edit z możliwościa edytowania 
+
             Auto auto = new Auto
                 (
                 listViewCar.SelectedItems[0].SubItems[0].Text,
@@ -89,7 +37,7 @@ namespace Mechanik
 
                 );
 
-            EditForm edit = new EditForm(this);
+            EditForm edit = new EditForm();
             
             edit.textRej = auto.NrRej;
             edit.marka = auto.Marka;
@@ -103,23 +51,43 @@ namespace Mechanik
 
         }
 
-        private void listViewCar_SelectedIndexChanged(object sender, EventArgs e)
+        public void LoadView()
         {
+            if (!String.IsNullOrEmpty(Settings.Default.PATH) && File.Exists(Settings.Default.PATH))
+            {
+                listViewCar.Visible = false;
+                metroProgressSpinner.Visible = true;
+                metroProgressSpinner.Value = 0;
+                List<Auto> auta = Auto.ReadFromXML(Settings.Default.PATH);
+                metroProgressSpinner.Maximum = auta.Count;
+                //Wczytuje z pliku XML i wpisuje w ListView
 
+
+
+                int i = 0;
+
+                foreach (var a in auta)
+                {
+
+                    listViewCar.Items.Add(a.NrRej);
+                    if (i % 2 == 0)
+                        listViewCar.Items[i].BackColor = SystemColors.Info;
+                    else
+                        listViewCar.Items[i].BackColor = SystemColors.Window;
+                    i++;
+                    metroProgressSpinner.Value = i;
+                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.Marka.ToString());
+                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.Model);
+                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.Kolor);
+                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.NrKolor);
+                    listViewCar.Items[listViewCar.Items.Count - 1].SubItems.Add(a.Opis);
+
+                }
+                metroProgressSpinner.Visible = false;
+                listViewCar.Visible = true;
+            }
         }
 
-        private void UserControlView_VisibleChanged(object sender, EventArgs e)
-
-        {
-            listViewCar.Items.Clear();
-            UserControlView_Load(null, null);
-        }
-       
-        public void Refreshes()
-        {
-            UserControlView_VisibleChanged(null,null);
-        }
-
-       
+  
     }
 }
