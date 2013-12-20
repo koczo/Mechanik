@@ -34,7 +34,7 @@ namespace Mechanik
         private void UserControlView_Load(object sender, EventArgs e)
         {
 
-            if (Settings.Default.PATH != null || !File.Exists(Settings.Default.PATH))
+            if (!String.IsNullOrEmpty(Settings.Default.PATH) && File.Exists(Settings.Default.PATH))
             {
                 List<Auto> auta = Auto.ReadFromXML(Settings.Default.PATH);
 
@@ -81,7 +81,7 @@ namespace Mechanik
             Auto auto = new Auto
                 (
                 listViewCar.SelectedItems[0].SubItems[0].Text,
-                listViewCar.SelectedItems[0].SubItems[1].Text.ConvertToEnum<Marka.Typ>(),
+                listViewCar.SelectedItems[0].SubItems[1].Text.ConvertToEnum<Typ>(),
                 listViewCar.SelectedItems[0].SubItems[2].Text,
                 listViewCar.SelectedItems[0].SubItems[3].Text,
                 listViewCar.SelectedItems[0].SubItems[4].Text,

@@ -17,7 +17,7 @@ namespace Mechanik
     public partial class EditForm : MetroFramework.Forms.MetroForm
     {
         public string textOpis, textRej, textModel, textKolor, textNrKolor;
-        public Marka.Typ marka;
+        public Typ marka;
         UserControlView _usV;
         UserControlSearch _usS;
         //Reg r = new Reg();
@@ -42,7 +42,7 @@ namespace Mechanik
         {
             this.Text = "Edycja pojazdu o numerze \nrejestracyjnym " + textRej;
             labelTytyl.Text = textRej;
-            comboBoxMarka.DataSource = Enum.GetValues(typeof(Pojazdy.Marka.Typ));
+            comboBoxMarka.DataSource = Enum.GetValues(typeof(Typ));
 
             comboBoxMarka.SelectedIndex = comboBoxMarka.Items.IndexOf(marka);
 
@@ -70,13 +70,13 @@ namespace Mechanik
                     var a = (from auto in auta
                              where auto.NrRej == textRej
                              select auto).FirstOrDefault();
-                    a.Marka = comboBoxMarka.Text.ConvertToEnum<Marka.Typ>();
+                    a.Marka = comboBoxMarka.Text.ConvertToEnum<Typ>();
                     a.Model = textBoxModel.Text;
                     a.Kolor = textBoxKolor.Text;
                     a.NrKolor = textBoxNrKolor.Text;
                     a.Opis = richTextBoxOpis.Text;
 
-                    Auto.Edit(textRej);
+                    Auto.Edit(a);
                     //Auto.Write(auta);
                     this.Close();
                 }

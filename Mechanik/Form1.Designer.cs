@@ -76,7 +76,7 @@
             resources.ApplyResources(this.metroTileView, "metroTileView");
             this.metroTileView.Name = "metroTileView";
             this.metroTileView.PaintTileCount = true;
-            this.metroTileView.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTileView.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTileView.StyleManager = null;
             this.metroTileView.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTileView.TileCount = 0;
@@ -90,7 +90,7 @@
             resources.ApplyResources(this.metroTileAdd, "metroTileAdd");
             this.metroTileAdd.Name = "metroTileAdd";
             this.metroTileAdd.PaintTileCount = true;
-            this.metroTileAdd.Style = MetroFramework.MetroColorStyle.Teal;
+            this.metroTileAdd.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTileAdd.StyleManager = null;
             this.metroTileAdd.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTileAdd.TileCount = 0;
@@ -121,6 +121,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.ShadowType = MetroFramework.Forms.ShadowType.DropShadow;
             ((System.ComponentModel.ISupportInitialize)(this.dataSetXML)).EndInit();
             this.ResumeLayout(false);
 

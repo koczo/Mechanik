@@ -16,7 +16,7 @@ namespace Mechanik
         {
             InitializeComponent();
             
-            comboBoxMarka.DataSource = Enum.GetValues(typeof(Pojazdy.Marka.Typ));
+            comboBoxMarka.DataSource = Enum.GetValues(typeof(Pojazdy.Typ));
         }
         
 
@@ -50,7 +50,7 @@ namespace Mechanik
                 {
                     auta.Add(new Auto(
                         textBoxNrRej.Text.ToUpper(),
-                        comboBoxMarka.Text.ConvertToEnum<Mechanik.Pojazdy.Marka.Typ>(),
+                        comboBoxMarka.Text.ConvertToEnum<Typ>(),
                         textBoxModel.Text.FirstToUpper(),
                         textBoxKolor.Text.FirstToUpper(),
                         textBoxNrKolor.Text.ToUpper(),

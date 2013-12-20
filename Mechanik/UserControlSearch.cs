@@ -32,7 +32,7 @@ namespace Mechanik
 
         private void UserControlSearch_Load(object sender, EventArgs e)
         {
-            comboBoxMarka.DataSource = Enum.GetValues(typeof(Pojazdy.Marka.Typ));
+            comboBoxMarka.DataSource = Enum.GetValues(typeof(Typ));
         }
 
         private void comboBoxMarka_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,11 +52,11 @@ namespace Mechanik
 
                 if (kolor != null && kolor != "" && marka != "Wybierz")
                 {
-                    s = auta.Where(k => k.NrKolor.Contains(kolor) && k.Marka == marka.ConvertToEnum<Marka.Typ>()).ToList();
+                    s = auta.Where(k => k.NrKolor.Contains(kolor) && k.Marka == marka.ConvertToEnum<Typ>()).ToList();
                 }
                 else if (kolor == null || kolor == "" && marka != "Wybierz")
                 {
-                    s = auta.Where(k => k.Marka == marka.ConvertToEnum<Marka.Typ>()).ToList();
+                    s = auta.Where(k => k.Marka == marka.ConvertToEnum<Typ>()).ToList();
                 }
                 else if (kolor != null && kolor != "" && marka == "Wybierz")
                 {
@@ -97,7 +97,7 @@ namespace Mechanik
             Auto auto = new Auto
                 (
                 listViewCar.SelectedItems[0].SubItems[0].Text,
-                listViewCar.SelectedItems[0].SubItems[1].Text.ConvertToEnum<Marka.Typ>(),
+                listViewCar.SelectedItems[0].SubItems[1].Text.ConvertToEnum<Typ>(),
                 listViewCar.SelectedItems[0].SubItems[2].Text,
                 listViewCar.SelectedItems[0].SubItems[3].Text,
                 listViewCar.SelectedItems[0].SubItems[4].Text,

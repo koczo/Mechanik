@@ -27,12 +27,12 @@ namespace Mechanik.Pojazdy
             {
                 throw;
             }
-        } 
+        }
 
         public static string ConvertToLower(this string value)
         {
-            
-            return  value.Replace(" ","").ToLower();
+
+            return value.Replace(" ", "").ToLower();
         }
 
         public static string FirstToUpper(this string value)

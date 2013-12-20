@@ -17,15 +17,15 @@ namespace Mechanik.Pojazdy
 
     public class Auto
     {
-        
+
         public string NrRej { get; set; }
-        public Marka.Typ Marka { get; set; }
+        public Typ Marka { get; set; }
         public string Model { get; set; }
         public string Kolor { get; set; }
         public string NrKolor { get; set; }
         public String Opis { get; set; }
 
-        public Auto(string nrRej, Marka.Typ marka, string model, string kolor, string nrKolor, string opis)
+        public Auto(string nrRej, Typ marka, string model, string kolor, string nrKolor, string opis)
         {
             NrRej = nrRej;
             Marka = marka;
@@ -41,7 +41,7 @@ namespace Mechanik.Pojazdy
 
         }
 
-        public static List<Auto> ReadFromXML (string path)
+        public static List<Auto> ReadFromXML(string path)
         {
             List<Auto> auta = new List<Auto>();
 
@@ -50,7 +50,7 @@ namespace Mechanik.Pojazdy
             if (File.Exists(path))
             {
                 ds.ReadXml(path);
-                if (ds.Tables.Count>0)
+                if (ds.Tables.Count > 0)
                 {
 
                     foreach (DataRow r in ds.Tables[0].Rows)
@@ -58,7 +58,7 @@ namespace Mechanik.Pojazdy
 
                         auta.Add(new Auto
                             (r[0].ToString(),
-                            r[1].ToString().ConvertToEnum<Mechanik.Pojazdy.Marka.Typ>(),
+                            String.IsNullOrEmpty(r[1].ToString()) ? Typ.Wybierz : r[1].ToString().ConvertToEnum<Typ>(),
                             r[2].ToString(),
                             r[3].ToString(),
                             r[4].ToString(),
@@ -66,7 +66,7 @@ namespace Mechanik.Pojazdy
                             ));
 
                     }
-                    ds.Dispose();  
+                    ds.Dispose();
                 }
             }
             return auta;
@@ -102,37 +102,38 @@ namespace Mechanik.Pojazdy
                            )));
 
             xml.Save(Settings.Default.PATH);
-           
+
         }
 
-        public static void Edit(string nrRej)
+        public static void Edit(Auto auto)
         {
 
             XDocument xml = XDocument.Load(Settings.Default.PATH);
 
-            var query = from nr in xml.Elements("pojazd")
-                        where nr.Value == nrRej
-                        select nr;
+            var query = from i in xml.Descendants("pojazd")
+                        where i.Element("numer_rej").Value == auto.NrRej
+                        select i;
 
-                      //new XElement("dane",
-                      //    from auto in auta
-                      //    select new XElement("pojazd",
-                      //     new XElement("numer_rej", auto.NrRej),
-                      //     new XElement("marka", auto.Marka),
-                      //     new XElement("model", auto.Model),
-                      //     new XElement("kolor", auto.Kolor),
-                      //     new XElement("numer_kol", auto.NrKolor),
-                      //     new XElement("opis", auto.Opis)
-                      //     )));
+
+            foreach (var item in query)
+            {
+
+                item.Element("marka").Value = auto.Marka.ToString();
+                item.Element("model").Value = auto.Model;
+                item.Element("kolor").Value = auto.Kolor;
+                item.Element("numer_kol").Value = auto.NrKolor;
+                item.Element("opis").Value = auto.Opis;
+
+            }
 
             xml.Save(Settings.Default.PATH);
-           
+
         }
 
         public static void FillList(List<Auto> auto)
         {
             ListView listViewCar = new ListView();
-            
+
         }
 
     }
