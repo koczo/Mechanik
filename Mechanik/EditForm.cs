@@ -26,6 +26,7 @@ namespace Mechanik
             InitializeComponent();
             view = new UserControlView();
             search = new UserControlSearch();
+            view.LoadViewEvent += view_LoadViewEvent;
         }
     
 
@@ -62,6 +63,7 @@ namespace Mechanik
                     a.Opis = richTextBoxOpis.Text;
 
                     Auto.Edit(a);
+                    view.LoadView();
                     
                     this.Close();
                 }
@@ -84,9 +86,15 @@ namespace Mechanik
                          select auto).FirstOrDefault();
                 auta.Remove(a);
                 Auto.Write(auta);
+                
                 this.Close();
             }
 
+        }
+
+        void view_LoadViewEvent(object sender, EventArgs e)
+        {
+            buttonDelate_Click(sender, e);
         }
     }
 }

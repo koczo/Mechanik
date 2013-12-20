@@ -108,7 +108,6 @@
             this.Controls.Add(this.listViewCar);
             this.Name = "UserControlView";
             this.Size = new System.Drawing.Size(625, 420);
-            //this.Load += new System.EventHandler(this.UserControlView_Load);
             this.ResumeLayout(false);
 
         }

@@ -16,10 +16,17 @@ namespace Mechanik
 {
     public partial class UserControlView : UserControl
     {
-  
+
+        public event EventHandler LoadViewEvent;
         public UserControlView()
         {
             InitializeComponent();
+            this.LoadViewEvent += UserControlView_LoadViewEvent;
+        }
+
+        void UserControlView_LoadViewEvent(object sender, EventArgs e)
+        {
+            LoadView();
         }
 
         
@@ -53,8 +60,10 @@ namespace Mechanik
 
         public void LoadView()
         {
+            
             if (!String.IsNullOrEmpty(Settings.Default.PATH) && File.Exists(Settings.Default.PATH))
             {
+                listViewCar.Items.Clear();
                 listViewCar.Visible = false;
                 metroProgressSpinner.Visible = true;
                 metroProgressSpinner.Value = 0;
